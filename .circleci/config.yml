@@ -10,7 +10,7 @@ jobs:
           name: Install Dagger CLI
           command: curl -fsSL https://dl.dagger.io/dagger/install.sh | BIN_DIR=$HOME/.local/bin sh
       - run:
-          command: dagger call -m github.com/goreleaser/goreleaser@12155a336baaa705e9363e3001c048238f15ff34 call test output
+          command: dagger -m github.com/goreleaser/goreleaser@12155a336baaa705e9363e3001c048238f15ff34 call test output
 
 workflows:
   ci:
