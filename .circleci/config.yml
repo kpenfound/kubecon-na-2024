@@ -1,13 +1,18 @@
 version: 2.1
 
 jobs:
-  build:
-    machine:
-      image: ubuntu-2204:current
-    resource_class: medium
+  test:
+    docker:
+      - image: cimg/base:2024.09
     steps:
+      - setup_remote_docker
       - run:
           name: Install Dagger CLI
-          command: cd /usr/local && { curl -L https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.11 sudo -E sh; cd -; }
+          command: curl -fsSL https://dl.dagger.io/dagger/install.sh | BIN_DIR=$HOME/.local/bin sh
       - run:
           command: dagger call -m github.com/goreleaser/goreleaser@12155a336baaa705e9363e3001c048238f15ff34 call test output
+
+workflows:
+  ci:
+    jobs:
+      - test
