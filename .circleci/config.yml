@@ -4,6 +4,7 @@ jobs:
   test:
     docker:
       - image: cimg/base:2024.09
+    resource_class: large
     steps:
       - setup_remote_docker
       - run:
