@@ -2,8 +2,8 @@ version: 2.1
 
 jobs:
   test:
-    docker:
-      - image: cimg/base:2024.09
+    machine:
+      - image: ubuntu-2404
     resource_class: large
     steps:
       - setup_remote_docker
