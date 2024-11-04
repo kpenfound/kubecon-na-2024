@@ -2,9 +2,8 @@ version: 2.1
 
 jobs:
   test:
-    machine:
-      image: ubuntu-2204:2024.08.1
-    resource_class: large
+    machine: true
+    resource_class: kpenfound/kubecon
     steps:
       - run:
           name: Install Dagger CLI
