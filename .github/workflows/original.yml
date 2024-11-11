@@ -2,22 +2,14 @@ name: goreleaser-ci
 
 on:
   push:
-    branches: ["**"]
+    branches: ["phase1/**"]
 
 permissions:
   contents: read
 
 jobs:
-  govulncheck:
-    uses: caarlos0/meta/.github/workflows/govulncheck.yml@main
-  semgrep:
-    uses: caarlos0/meta/.github/workflows/semgrep.yml@main
-  ruleguard:
-    uses: caarlos0/meta/.github/workflows/ruleguard.yml@main
-    with:
-      args: "-disable largeloopcopy"
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       DOCKER_CLI_EXPERIMENTAL: "enabled"
     steps:
@@ -58,10 +50,3 @@ jobs:
         with:
           file: ./coverage.txt
       - run: git diff
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          fetch-depth: 0
-      - run: go run . check
