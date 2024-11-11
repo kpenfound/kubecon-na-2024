@@ -17,6 +17,7 @@ jobs:
         with:
           repository: "goreleaser/goreleaser"
           fetch-depth: 0
+          ref: 'a8f1ba7127a00b7358d2ced57a927daf009dad3f'
       - uses: arduino/setup-task@b91d5d2c96a56797b48ac1e0e89220bf64044611 # v1
         with:
           version: 3.x
