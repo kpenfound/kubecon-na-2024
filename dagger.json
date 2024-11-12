@@ -1,0 +1,13 @@
+{
+  "name": "kubecon-na-2024",
+  "engineVersion": "v0.14.0",
+  "sdk": "go",
+  "dependencies": [
+    {
+      "name": "goreleaser",
+      "source": "github.com/goreleaser/goreleaser",
+      "pin": "a8f1ba7127a00b7358d2ced57a927daf009dad3f"
+    }
+  ],
+  "source": ".dagger"
+}
