@@ -12,12 +12,3 @@ jobs:
         with:
           module: github.com/goreleaser/goreleaser@f54fb113ee6415fd2ada737b3ffd71e5e32682ad
           args: test output
-  hosted:
-    name: hosted x86
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dagger
-        uses: dagger/dagger-for-github@v7
-        with:
-          module: github.com/goreleaser/goreleaser@f54fb113ee6415fd2ada737b3ffd71e5e32682ad
-          args: test output
