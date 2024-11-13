@@ -13,4 +13,7 @@ jobs:
         uses: thollander/actions-comment-pull-request@v3
         with:
           message: |
-            Test this PR `dagger -m github.com/${{ github.repository }}@${{ github.ref }} call test`
+            Test this PR
+            ```
+            dagger -m github.com/${{ github.repository }}@${{ github.ref }} call test
+            ```
