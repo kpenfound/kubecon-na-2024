@@ -1,0 +1,19 @@
+name: comment
+on:
+  pull_request:
+
+permissions:
+  pull-requests: write
+jobs:
+  comment:
+    name: comment
+    runs-on: self-hosted
+    steps:
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: |
+            Test this PR
+            ```
+            dagger -m github.com/${{ github.repository }}@${{ github.ref }} call test
+            ```
