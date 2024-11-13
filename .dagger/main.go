@@ -13,7 +13,7 @@ type KubeconNa2024 struct{}
 // Returns the goreleaser test pipeline
 func (m *KubeconNa2024) Test(ctx context.Context) (string, error) {
 	source := dag.Git("github.com/goreleaser/goreleaser").
-		Commit("12155a336baaa705e9363e3001c048238f15ff34").
+		Commit("f54fb113ee6415fd2ada737b3ffd71e5e32682ad").
 		Tree()
 	return dag.Goreleaser(dagger.GoreleaserOpts{Source: source}).
 		Test().
