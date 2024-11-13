@@ -6,7 +6,7 @@
     {
       "name": "goreleaser",
       "source": "github.com/goreleaser/goreleaser",
-      "pin": "a8f1ba7127a00b7358d2ced57a927daf009dad3f"
+      "pin": "f54fb113ee6415fd2ada737b3ffd71e5e32682ad"
     }
   ],
   "source": ".dagger"
