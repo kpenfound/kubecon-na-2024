@@ -2,7 +2,7 @@ name: comment
 on:
   pull_request:
 permissions:
-   pull-requests: write
+  pull-requests: write
 jobs:
   comment:
     name: comment
